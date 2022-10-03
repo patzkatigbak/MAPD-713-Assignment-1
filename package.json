@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "restify": "^8.6.1",
+    "save": "^2.9.0"
+  }
+}
