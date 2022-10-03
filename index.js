@@ -93,13 +93,13 @@ server.post('/images', function (req, res, next) {
     size: req.params.size
 	}
 
-  // Create the user using the persistence engine
+  // Create the image using the persistence engine
   imagesSave.create( newImage, function (error, image) {
 
     // If there are any errors, pass them to next in the correct format
     if (error) return next(new restify.InvalidArgumentError(JSON.stringify(error.errors)))
 
-    // Send the user if no issues
+    // Send the image if no issues
     res.send(201, image)
   })
 
@@ -111,7 +111,7 @@ server.post('/images', function (req, res, next) {
 
 })
 
-// Update a user by their id
+// Update a image by their id
 server.put('/images/:id', function (req, res, next) {
 
   // Make sure name is defined
@@ -149,7 +149,7 @@ server.put('/images/:id', function (req, res, next) {
 // Delete image with the given id
 server.del('/images/:id', function (req, res, next) {
 
-  // Delete the user with the persistence engine
+  // Delete the image with the persistence engine
   imagesSave.delete(req.params.id, function (error, image) {
 
     // If there are any errors, pass them to next in the correct format
