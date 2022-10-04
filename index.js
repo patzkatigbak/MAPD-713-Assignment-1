@@ -160,34 +160,18 @@ server.del('/images/:id', function (req, res, next) {
   })
 })
 
-// // Delete all images
-// server.del('/images', function (req, res, next) {
-
-//   imagesSave.delete({}, function (error, images) {
-
-//     // If there are any errors, pass them to next in the correct format
-//     if (error) return next(new restify.InvalidArgumentError(JSON.stringify(error.errors)))
-    
-//     // Send a 200 OK response
-//     res.send(images)
-//   })
-// })
-
-// Get all images in the system
+// Delete all images in the system
 server.del('/images', function (req, res, next) {
     
-  // Find every entity within the given collection
-  imagesSave.delete({}, function (error, images) {
+  // Delete every entity within the given collection
+  imagesSave.deleteMany({}, function (error, images) {
 
     // If there are any errors, pass them to next in the correct format
     if (error) return next(new restify.InvalidArgumentError(JSON.stringify(error.errors)))
 
-    // Return all of the images in the system
-    res.send(images)
-    console.log("images DEL: Deleted ALL")
+    res.send()
   })
 })
 
 imagesSave.create(newImage={"name":"Patz Photo",
   "url":"http://Photo.com/PatzPhoto", "size":"500kb"})
-
