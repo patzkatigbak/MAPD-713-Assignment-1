@@ -146,7 +146,7 @@ server.put('/images/:id', function (req, res, next) {
   })
 })
 
-// Delete image with the given id
+// Delete image using given id
 server.del('/images/:id', function (req, res, next) {
 
   // Delete the image with the persistence engine
@@ -173,5 +173,6 @@ server.del('/images', function (req, res, next) {
   })
 })
 
+//initial create of image upon running the index.js
 imagesSave.create(newImage={"name":"Patz Photo",
   "url":"http://Photo.com/PatzPhoto", "size":"500kb"})
